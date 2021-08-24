@@ -7,12 +7,12 @@ var hoteles = {
 Turquesa: {
     name: "Turquesa",
     location: "Malaga",
-    img: "",
+    img: "https://res.cloudinary.com/lastminute/image/upload/c_scale,w_630/q_auto/v1553297945/ldzacy8bxokgzbbmengg.jpg",
 },
 Azul: {
     name:"Azul",
     location: "Malaga",
-    img: "",
+    img: "https://pix10.agoda.net/hotelImages/244/244874/244874_121013171756973.jpg?s=1024x768",
 },
 }
 
