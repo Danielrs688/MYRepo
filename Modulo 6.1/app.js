@@ -28,4 +28,4 @@ totalCost += productCost(product);
 }
 return totalCost;
 };
-console.log(totalCost(products));
+console.log(totalCost(productList));
