@@ -64,49 +64,27 @@ units: 0,
 
 // APARTADO 1. Generar HTML dinámico para representar seleccion de unidades para cada producto de la lista.
 
-// HTML --> div id="product-list-container"
+var container = document.getElementById("productList"); //
 
-var createQuantity = (product) => {
-    var quantity = document.createElement("input");
-    quantity.setAttribute("type","number");
-    quantity.setAttribute("name","quantity-" + product.description);
-    quantity.setAttribute("id","item-" + product.description);
-    quantity.setAttribute("min","0-");
-    quantity.setAttribute("max",product.stock);
-    quantity.addEventListener("change", event => product.units - event.target.value);
-    return quantity;
-};
+var createProduct = product => {
+var input = document.createElement("input");
+var element = document.createElement("li");
+element.innerHTML = product.description + "  "  + product.price;
+product.description = product.price * product.units;
+input.setAttribute("type", "number");
+input.addEventListener("change", event => product.units = parseInt(event.target.value));
+element.appendChild(input);
+container.appendChild(element);
+}
 
-var showProductList = (productList) => {
-    var containerList = document.getElementById("shopping.list");
-
-    for (var product of productList) {
-        var description = document.createElement("li");
-        description.setAttribute("class","shopping.list_item");
-
-        description.innerText = product.description + " - " + product.price + "€/ud.";
-        containerList.appendChild(description);
-        description.appendChild(createQuantity(product));
-    }
+var showProducts = productList => {
+for( var product of productList){
+    createProduct(product);
+ }
 }
 
 
 
+showProducts(products);
 
-//var container = document.getElementById("productList"); //
-
-//var createProduct = product => {
-   // var input = document.createElement("input");
-   // input.setAttribute("type", "number");
-   // input.addEventListener("change", event => product.units = event.target.value);
-   // container.appendChild(input);
-//}
-// var showProducts = producList => {
-//    for( var product of productList){
- //       createProduct(product);
- //   }
-//}
-
-//showProducts(products);
-
-// document.getElementById("btn").addEventListener("click", () => console.log(products)); 
+document.getElementById("btn").addEventListener("click", () => console.log(products)); 
