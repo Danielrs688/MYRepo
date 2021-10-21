@@ -31,3 +31,9 @@ var transformLetter = (letter, origin, destino) => {
     }
 
     console.log(transformMessage(text));
+
+
+   
+   
+    var showResultplainAlphabet = () => document.getElementById("transformMessage(text)").innerText = encrypt();
+var showResultencryptedAlphabet = () => document.getElementById("transformMessage(text)").innerText = descrypt();
